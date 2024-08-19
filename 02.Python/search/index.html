@@ -3,6 +3,12 @@
 
 <head>
     <title>Search</title>
+    <style>
+        .advanced_search {
+            background-color: blue;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -12,11 +18,15 @@
     </form>
     <form action="https://images.google.com/">
         <input type="text" name="q">
-        <input type="submit" value="Google Search">
+        <input type="submit" value=" Google Image Search">
     </form>
-    <form action="https://google.com/search">
+    <form action="https://www.google.com/advanced_search?q=">
         <input type="text" name="q">
-        <input type="submit" value="Google Search">
+        <input class="advanced_search" type="submit" value="Advanced Search">
+    </form>
+    <form action="https://doodles.google/">
+        <input type="text" name="q">
+        <input type="submit" value="I’m Feeling Lucky">
     </form>
 </body>
 
