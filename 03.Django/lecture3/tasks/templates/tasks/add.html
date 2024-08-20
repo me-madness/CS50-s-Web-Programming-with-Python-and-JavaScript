@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "tasks/loyout.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tasks</title>
-</head>
-
-<body>
+{% block body %}
     <form>
         <h1>Add Task</h1>
         <input type="text" name="task">
         <input type="submit">
     </form>
-</body>
-
-</html>
+{% endblock %}
