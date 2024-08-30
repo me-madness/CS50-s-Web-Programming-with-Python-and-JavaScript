@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Flight
+from .models import Flight, Passenger
 
 # Create your views here.
 def index(request):
@@ -14,3 +14,9 @@ def flight(request, flight_id):
         "flights": flight,
         "passengers": flight.passengers.all()
     })
+    
+
+def book(request, flight_id):    
+    if request.method == "POST":
+        flight = Flight.objects.get(pk=flight_id)
+        passenger = Passenger.objects.get(pk=int(request.POST["passenger"]))
