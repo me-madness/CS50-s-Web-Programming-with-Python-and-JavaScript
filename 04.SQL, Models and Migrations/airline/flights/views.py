@@ -8,7 +8,7 @@ def index(request):
         "flights": Flight.objects.all()
     })
     
-def index(request):
-    return render(request, "flights/index.html", {
+def flight(request, flight_id):
+    return render(request, "flights/flight.html", {
         "flights": Flight.objects.all()
     })
