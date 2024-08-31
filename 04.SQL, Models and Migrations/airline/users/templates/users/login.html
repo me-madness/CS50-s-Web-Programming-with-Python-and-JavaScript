@@ -1,7 +1,11 @@
-{% extend "flights/loyout.html" %}
+{% extend "users/loyout.html" %}
 
 {% block body %}
-    <h1>Users</h1>
+
+    {% if massage %}
+        <div>{{ message }}</div>
+    {% endif %}    
+
     <form action="{% url 'login' %}" method="POST">
         {% csrf_token %}
         <input type="text" name="usersname" placeholder="Username">
