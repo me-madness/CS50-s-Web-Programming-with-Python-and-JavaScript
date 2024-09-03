@@ -8,6 +8,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
+            // First Way 
             // Change font color to red
             document.querySelector('#red').onclick = function() {
                 document.querySelector('#hello').style.color = 'red';
@@ -23,15 +24,28 @@
                 document.querySelector('#hello').style.color = 'green';
             }
 
+            // Second Way 
+            document.querySelectorAll('button').forEach(function(button) {
+                button.onclick = function() {
+                    document.querySelector('#hello').style.color = button.dataset.color;
+                }
+            });
+
         });
     </script>
 </head>
 
 <body>
     <h1 id="hello">Hello!</h1>
+    <!-- First way -->
     <button id="red">Red</button>
     <button id="blue">Blue</button>
     <button id="green">Green</button>
+
+    <!-- Second way -->
+    <button data-color="red">Red</button>
+    <button data-color="blue">Blue</button>
+    <button data-color="green">Green</button>
 </body>
 
 </html>
