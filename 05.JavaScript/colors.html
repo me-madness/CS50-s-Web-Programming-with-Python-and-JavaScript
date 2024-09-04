@@ -23,9 +23,22 @@
             document.querySelector('#green').onclick = function() {
                 document.querySelector('#hello').style.color = 'green';
             }
+        });
 
-            // Second Way 
+        // Second Way 
+        document.addEventListener('DOMContentLoaded', function() {
+
             document.querySelectorAll('button').forEach(function(button) {
+                button.onclick = function() {
+                    document.querySelector('#hello').style.color = button.dataset.color;
+                }
+            });
+        });
+
+        // Third Way
+        document.addEventListener('DOMContentLoaded', () => {
+
+            document.querySelectorAll('button').forEach(button => {
                 button.onclick = function() {
                     document.querySelector('#hello').style.color = button.dataset.color;
                 }
