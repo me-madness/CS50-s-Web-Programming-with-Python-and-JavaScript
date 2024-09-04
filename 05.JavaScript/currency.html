@@ -11,7 +11,7 @@
                 .then(response => response.json())
                 .then(data => {
                     const rate = data.rates.EUR;
-                    document.querySelector('boy').innerHTML = `1 USD is equal to ${rate} EUR.`;
+                    document.querySelector('body').innerHTML = `1 USD is equal to ${rate} EUR.`;
                 });
         });
     </script>
