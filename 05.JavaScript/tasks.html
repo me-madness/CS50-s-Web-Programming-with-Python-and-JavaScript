@@ -9,7 +9,7 @@
         document.addEventListener('DOMContentLoaded', function() {
 
             // By default, submit button is disabled
-            document.querySelector('submit').disabled = true;
+            document.querySelector('#submit').disabled = true;
 
             document.querySelector('#task').onkeyup = () => {
                 if (document.querySelector('#task').value.length > 0) {
@@ -21,7 +21,6 @@
 
             document.querySelector('form').onsubmit = () => {
                 const task = document.querySelector('#task').value;
-                console.log(task);
 
                 const li = document.createElement('li');
                 li.innerHTML = task;
@@ -30,7 +29,7 @@
 
 
                 document.querySelector('#task').value = '';
-                document.querySelector('submit').disabled = true;
+                document.querySelector('#submit').disabled = true;
 
                 // Stop form from submitting
                 return false;
