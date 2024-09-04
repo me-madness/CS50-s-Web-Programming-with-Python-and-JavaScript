@@ -26,9 +26,9 @@
         });
 
         // Second Way 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', () => {
 
-            document.querySelectorAll('button').forEach(function(button) {
+            document.querySelectorAll('button').forEach(button => {
                 button.onclick = function() {
                     document.querySelector('#hello').style.color = button.dataset.color;
                 }
@@ -38,11 +38,9 @@
         // Third Way
         document.addEventListener('DOMContentLoaded', () => {
 
-            document.querySelectorAll('button').forEach(button => {
-                button.onclick = function() {
-                    document.querySelector('#hello').style.color = button.dataset.color;
-                }
-            });
+            document.querySelector('select').onchange = function() {
+                document.querySelector('#hello').style.color = this.value;
+            }
 
         });
     </script>
@@ -59,6 +57,12 @@
     <button data-color="red">Red</button>
     <button data-color="blue">Blue</button>
     <button data-color="green">Green</button>
+
+    <!-- Third way -->
+    <select value="black">Black</select>
+    <select value="red">Red</select>
+    <select value="blue">Blue</select>
+    <select value="green">Green</select>
 </body>
 
 </html>
