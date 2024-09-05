@@ -7,18 +7,25 @@
     <title>Currency Exchange</title>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('https://api.exchangeratesapi.io/latest?base=USD')
-                .then(response => response.json())
-                .then(data => {
-                    const rate = data.rates.EUR;
-                    document.querySelector('body').innerHTML = `1 USD is equal to ${rate} EUR.`;
-                });
-        });
+
+                    document.querySelector('form').onsubmit = function() {
+                        fetch('https://api.exchangeratesapi.io/latest?base=USD')
+                            .then(response => response.json())
+                            .then(data => {
+                                const currency = document.querySelector('#currency').value;
+                                const rate = data.rates.EUR;
+                                document.querySelector('body').innerHTML = `1 USD is equal to ${rate.toFixed(3)} EUR.`;
+                            });
+
+                        return false;
+                    }
+
+                }
     </script>
 </head>
 
 <body>
-
+    <form id="currency" placeholder="Currency" type="text"></form>
 </body>
 
 </html>
